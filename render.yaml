@@ -1,10 +1,12 @@
 services:
   - type: web
-    name: my-web-proxy
+    name: vidstream-downloader
     env: node
     plan: free
-    buildCommand: "npm install"
-    startCommand: "node server.js"
+    region: frankfurt
+    buildCommand: npm install
+    startCommand: node server.js
+    autoDeploy: true
     envVars:
-      - key: NODE_VERSION
-        value: 18.17.0
+      - key: NODE_ENV
+        value: production
